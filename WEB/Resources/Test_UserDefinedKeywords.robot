@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${search_text}  laptop
-${verify_text}  Find your laptop
+${verify_text}  Find your
 ${low_price}    400
 ${high_prive}   600
 
@@ -12,7 +12,7 @@ Find laptop and verify result
     Page should contain link   id:nav-logo-sprites
     Input text   id:twotabsearchtextbox   ${search_text}
     Click Element   id:nav-search-submit-button
-    Page Should Contain   ${verify_text}
+    Page Should Contain   ${verify_text} ${search_text}
 
 Filter the results
     Input Text   id:low-price   ${low_price}
