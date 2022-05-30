@@ -1,6 +1,8 @@
 *** Settings ***
-Library     SeleniumLibrary
+Resource  ../Resources/CommonFunctionality.robot
+Resource  ../Resources/Test_UserDefinedKeywords.robot
 
+*** Variables ***
 
 *** Test Cases ***
 TEST1
@@ -12,23 +14,6 @@ TEST1
     Finish test
 
 
-*** Keywords ***
-Start test
-    Open Browser   https://www.amazon.com   chrome
-    Maximize browser window
 
-Find laptop and verify result
-    Page should contain link   id:nav-logo-sprites
-    Input text   id:twotabsearchtextbox   laptop
-    Click Element   id:nav-search-submit-button
-    Page Should Contain   Find your laptop
 
-Filter the results
-    Input Text   id:low-price   400
-    Input Text   id:high-price   600
-    Click Element   id:a-autoid-1
-    Click Element   id:a-autoid-0
-    Click Element   id:s-result-sort-select_1
 
-Finish test
-    Close Browser
